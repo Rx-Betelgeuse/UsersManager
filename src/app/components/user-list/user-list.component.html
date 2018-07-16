@@ -1,0 +1,14 @@
+
+<button color="primary" (click)="dataService.CreateUserForm()" mat-raised-button>Новый пользователь</button>
+<mat-list role="list" class="list">
+  <mat-list-item *ngFor="let user of dataService.users" role="listitem">
+    <div class="item">
+      <div class="name">
+        <span>{{user.firstName}} &nbsp;{{ user.secondName}}</span>        
+      </div>
+      <mat-icon class="icon" (click)=dataService.DeleteUser(user)>delete</mat-icon>
+      <mat-icon class="icon" (click)=dataService.EditUser(user)>mode_edit</mat-icon>
+    </div>
+  </mat-list-item>
+
+</mat-list>

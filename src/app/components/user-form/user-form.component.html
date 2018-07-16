@@ -1,0 +1,33 @@
+<form [formGroup]="userForm" >
+  <mat-card>
+    <mat-card-title>{{title}}</mat-card-title>
+    <mat-card-content>
+      <div class="name-input">
+        <mat-form-field>
+          <input matInput placeholder="Имя" formControlName="firstName">
+        </mat-form-field>
+        <div class="divider"></div>
+        <mat-form-field>
+          <input matInput placeholder="Фамилия" formControlName="secondName">
+        </mat-form-field>
+      </div>
+      <mat-form-field>
+        <mat-select placeholder="Должность" formControlName="role">
+          <mat-option *ngFor="let r of roles" [value]="r">
+            {{r}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="phone"  >
+          <span matPrefix>+380 &nbsp;</span>
+          <input  type="tel" matInput maxlength="9" minlength="9" placeholder="Телефон" formControlName="phone">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+        </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="onSubmit()" type="button" color="primary" mat-raised-button>Сохранить</button>
+      <button type="button" (click)="init()" color="warn" mat-raised-button>Отмена</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

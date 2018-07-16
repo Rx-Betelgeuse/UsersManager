@@ -1,0 +1,11 @@
+.name-input{
+    display: flex;
+}
+
+.divider{
+    width: 10px;
+}
+
+.phone{
+    width: 140px;
+}
